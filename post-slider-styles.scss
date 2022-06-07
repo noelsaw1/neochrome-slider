@@ -1,0 +1,253 @@
+
+
+html body #nps-slider-container{
+
+	* {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+* {
+  //outline: 1px solid rgba(125,0,0,0.2);
+  //outline-offset: -1px;
+}
+
+//border:1px solid blue;
+display:block;
+position:relative;
+width:100%;
+height:400px;
+overflow:hidden;
+
+.nps-slide{
+  display:block;
+  position:relative;
+  width:100%;
+  height:400px;
+  background-position:center center;
+  background-size:cover;
+  min-height:400px;
+  overflow:hidden;
+
+
+
+  
+
+}
+.nps-slide-layout-wrap{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
+  //outline: 1px solid rgba(0,0,255,0.8);
+
+  hyphens:none;
+  a{
+    hyphens:none;
+    white-space:nowrap;
+  }
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4c4c4+0,000000+100&0+0,1+100 */
+background: -moz-linear-gradient(top,  rgba(196,196,196,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+
+
+
+}
+.nps-slide-content-wrapper{
+  display: block;
+  position:relative;
+  top:50%;
+  transform:translateY( -50% );
+
+  width:45%;
+  padding:15px 30px 15px 30px;
+  //text-shadow: 1px 2px 3px RGBA(0,0,0,1);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+
+  &.nps-content-left{
+    margin-left:0;
+    margin-right:auto;
+    left:0;
+    .nps-cta-button{
+      margin-left:auto;
+      margin-right:0;
+      right:0;
+      float:right;
+    }
+  }
+  &.nps-content-right{
+    margin-left:auto;
+    margin-right:0;
+    left:0;
+    .nps-cta-button{
+      margin-left:0;
+      margin-right:auto;
+      left:0;
+      float:left;
+    }
+  }
+  &.nps-content-center{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    .nps-cta-button{
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+
+  .nps-slide-content-wrapper{
+    display: block;
+    position:relative;
+    top:50%;
+    transform:translateY( -50% );
+  
+    width:90%;
+    padding:15px 0 15px 0;
+    //text-shadow: 1px 2px 3px RGBA(0,0,0,1);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  
+    &.nps-content-left{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+      left:auto;
+      .nps-cta-button{
+        margin-left:auto;
+        margin-right:auto;
+        right:auto;
+      }
+    }
+    &.nps-content-right{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+      left:auto;
+      .nps-cta-button{
+        margin-left:auto;
+        margin-right:auto;
+        left:auto;
+      }
+    }
+    &.nps-content-center{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+      .nps-cta-button{
+        margin-left:auto;
+        margin-right:auto;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+.nps-slide-title{
+  color: white !important;
+  font-size:50px !important;
+  line-height:60px !important;
+}
+.nps-the-content{
+  color: white !important;
+  font-size:19px;
+  line-height:19px;
+  font-weight:bold;
+}
+a.nps-cta-button{
+  display:inline-block;
+  position:relative;
+  width:auto;
+  background:#59B957;
+  color:white;
+  font-size:19px;
+  line-height:19px;
+  padding: 16px 30px;
+  font-weight:bold;
+  margin-top:20px;
+}
+.slick-prev{
+  img{
+    box-shadow: 3px 3px 15px -15px rgba(0,0,0,1);
+  }
+}
+.slick-next{
+  img{
+
+    box-shadow: 3px 3px 15px -15px rgba(0,0,0,1);
+  }
+}
+
+
+
+
+
+}
+/*
+#neochrome-hellobar{
+  * {
+    //outline:1px solid red;
+  }
+  display: block;
+  position: relative;
+  background-color: #000000;
+  color: #FFFFFF;
+  height:60px;
+  @media (max-width: 767px){
+    height:auto;
+  }
+  width:100%;
+  .nhb-flex-row{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+  }
+  .nhb-flex-column{
+    display:flex;
+    flex-direction:column;
+  }
+  .nhb-flex-item{
+    padding:2px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nps-hidden-sm{
+    display:none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .nps-hidden-md{
+    display:none !important;
+  }
+}
+@media (min-width: 992px) {
+  .nps-hidden-lg{
+    display:none !important;
+  }
+}
+//*/
+
+
+
+
+
+
+
+
+
+
+
