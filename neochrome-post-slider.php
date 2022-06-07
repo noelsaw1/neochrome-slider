@@ -11,7 +11,9 @@ Author URI: http://neochro.me
 
 
 if (!function_exists('write_log')) {
+
 	function write_log ( $log )  {
+  /*
 		if ( true === WP_DEBUG ) {
 			if ( is_array( $log ) || is_object( $log ) ) {
 				error_log( print_r( $log, true ) );
@@ -19,12 +21,14 @@ if (!function_exists('write_log')) {
 				error_log( $log );
 			}
 		}
+      //*/
 	}
+
 }
 write_log('in '.__FILE__);
 add_action('wp_enqueue_scripts', 'nps_setting_up_scripts');
 function nps_setting_up_scripts() { 
-	wp_register_style( 'neochrome-post-slider-styles', plugins_url( 'post-slider-styles.css', __FILE__ ) );
+	wp_register_style( 'neochrome-post-slider-styles', plugins_url( 'post-slider-styles.css', __FILE__ ), array(), '20211018d' );
 	wp_enqueue_style( 'neochrome-post-slider-styles' );
   wp_register_style( 'nps-slick-slider-css', plugins_url( 'slick.css', __FILE__ ) );
 	wp_enqueue_style( 'nps-slick-slider-css' );
@@ -76,8 +80,8 @@ add_action('wp_head', 'header_add');
 
 
 function neochrome_post_slider_setup() {
-  add_image_size( 'nps-slider-background', 1200, 400, true );
-  add_image_size( 'nps-slider-mobile-background', 400, 400, true );
+  add_image_size( 'nps-slider-background', 1200, 0, false );
+  add_image_size( 'nps-slider-mobile-background', 400, 0, false );
   
 
 	function nps_post_slider($atts){
@@ -111,6 +115,7 @@ function neochrome_post_slider_setup() {
           $text_layout_options = '';
           $cta_link = '';
           if ( function_exists('get_field') ) {
+            $mobile_title = get_field("mobile_title");
             $mobile_image = get_field("mobile_image");
             write_log($mobile_image);
             $text_layout_options = get_field("text_layout_options");
@@ -140,6 +145,7 @@ function neochrome_post_slider_setup() {
         <div class="nps-slide-content-wrapper nps-content-<?php echo $text_layout_options; ?>">
        
           <div class="h1 nps-slide-title"><?php echo get_the_title(); ?></div>
+          <div class="h1 nps-mobile-slide-title"><?php echo $mobile_title ? $mobile_title : get_the_title(); ?></div>
           <div class="nps-the-content">
             <?php echo get_the_content(); ?>
           </div>

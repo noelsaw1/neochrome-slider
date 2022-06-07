@@ -9,7 +9,7 @@ html body #nps-slider-container{
 		box-sizing: inherit;
 	}
 * {
-  //outline: 1px solid rgba(125,0,0,0.2);
+  //outline: 1px solid rgba(125,0,0,0.2) !important;
   //outline-offset: -1px;
 }
 
@@ -26,7 +26,9 @@ overflow:hidden;
   width:100%;
   height:400px;
   background-position:center center;
-  background-size:cover;
+  //background-size:100%;
+  background-size:contain;
+  background-repeat: no-repeat;
   min-height:400px;
   overflow:hidden;
 
@@ -40,7 +42,7 @@ overflow:hidden;
   position:relative;
   width:100%;
   height:100%;
-  //outline: 1px solid rgba(0,0,255,0.8);
+  //outline: 1px solid rgba(0,0,255,0.8) !important;
 
   hyphens:none;
   a{
@@ -49,10 +51,10 @@ overflow:hidden;
   }
 
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4c4c4+0,000000+100&0+0,1+100 */
-background: -moz-linear-gradient(top,  rgba(196,196,196,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+//background: -moz-linear-gradient(top,  rgba(196,196,196,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+//background: -webkit-linear-gradient(top,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+//background: linear-gradient(to bottom,  rgba(196,196,196,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 
 
 
@@ -61,13 +63,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', e
 .nps-slide-content-wrapper{
   display: block;
   position:relative;
-  top:50%;
+  top:40%;
   transform:translateY( -50% );
 
-  width:45%;
+  width:55%;
   padding:15px 30px 15px 30px;
   //text-shadow: 1px 2px 3px RGBA(0,0,0,1);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  //text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 
   &.nps-content-left{
     margin-left:0;
@@ -77,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', e
       margin-left:auto;
       margin-right:0;
       right:0;
-      float:right;
+      float:left;
     }
   }
   &.nps-content-right{
@@ -102,23 +104,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', e
   }
 }
 
+.nps-mobile-slide-title{
+  display:none;
+}
+
 @media screen and (max-width: 767.98px) {
+
+  .nps-slide-title{
+    display:none !important;
+  }
+  .nps-slide{
+    //height:360;
+    //width:360;
+
+  }
+  .nps-mobile-slide-title{
+    display:block !important;
+    color: rgba(7, 7, 7, 0.8);
+    font-size:40px !important;
+    line-height:42px !important;
+    text-transform: uppercase;
+    margin-bottom:10px;
+  }
 
   .nps-slide-content-wrapper{
     display: block;
     position:relative;
-    top:50%;
-    transform:translateY( -50% );
+    top:18px;
+    transform:translateY( 0 );
   
     width:90%;
-    padding:15px 0 15px 0;
+    padding:15px 0 15px 20px;
     //text-shadow: 1px 2px 3px RGBA(0,0,0,1);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    //text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   
     &.nps-content-left{
-      margin-left:auto;
-      margin-right:auto;
-      text-align:center;
+      text-align:left;
       left:auto;
       .nps-cta-button{
         margin-left:auto;
@@ -157,27 +178,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c4c4c4', e
 
 
 .nps-slide-title{
-  color: white !important;
-  font-size:50px !important;
-  line-height:60px !important;
+  color: rgba(7, 7, 7, 0.8);
+  font-size:40px !important;
+  line-height:50px !important;
+  text-transform: uppercase;
+  margin-bottom:40px;
 }
 .nps-the-content{
-  color: white !important;
+  color: rgba(0, 0, 0, 0.75)!important;
   font-size:19px;
-  line-height:19px;
+  line-height:22px;
   font-weight:bold;
 }
 a.nps-cta-button{
   display:inline-block;
   position:relative;
   width:auto;
-  background:#59B957;
+  background: rgba(0, 0, 0, 0.85);
   color:white;
   font-size:19px;
   line-height:19px;
   padding: 16px 30px;
   font-weight:bold;
   margin-top:20px;
+  &:hover{
+    background: rgba(0, 0, 0, 0.65);
+  }
 }
 .slick-prev{
   img{
