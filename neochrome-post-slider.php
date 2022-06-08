@@ -132,16 +132,6 @@ function neochrome_post_slider_setup() {
 
       <div class="nps-slide slide-image-id-<?php echo $post_thumbnail_id?>">
       <div class="nps-slide-layout-wrap">
-      <style>
-      div.slide-image-id-<?php echo $post_thumbnail_id?>{
-        background-image: url(<?php echo $slide_featured['0']; ?>);
-      }
-      @media screen and (max-width: 767.98px){
-        div.slide-image-id-<?php echo $post_thumbnail_id?>{
-          background-image: url(<?php echo $slide_mobile_featured['0']; ?>);
-        }
-      }
-      </style>
         <div class="nps-slide-content-wrapper nps-content-<?php echo $text_layout_options; ?>">
        
           <div class="h1 nps-slide-title"><?php echo get_the_title(); ?></div>
@@ -152,6 +142,9 @@ function neochrome_post_slider_setup() {
           <a href="<?php echo $cta_link['url']; ?>" class="nps-cta-button">
           <?php echo $cta_link['title'] ? $cta_link['title'] : 'Shop Now' ?>
           </a>
+        </div>
+        <div class="featured-product-img">
+          <?php echo get_the_post_thumbnail( get_the_ID(), 'full' ); ?>
         </div>
       </div>
     </div>
